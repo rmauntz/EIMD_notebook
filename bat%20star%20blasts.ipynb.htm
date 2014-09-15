@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)http://nbviewer.ipython.org/github/rmauntz/EIMD_notebook/blob/master/bat%20star%20blasts.ipynb -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <meta name="description" content="">
+    
+
+    
+    <meta name="author" content="">
+    
+
+    <!--NEW RELIC Start Perf Measurement-->
+    
+    <!--NREND-->
+
+    <!-- Le styles -->
+    <!--<link href="/static/css/bootstrap.css" rel="stylesheet">-->
+    <link href="http://nbviewer.ipython.org/static/css/docs.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/components/animate.css/animate.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/components/Font-Awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/css/nbviewer.css" rel="stylesheet">
+
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://nbviewer.ipython.org/static/ico/ipynb_icon_16x16.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://nbviewer.ipython.org/static/ico/apple-touch-icon-57-precomposed.png">
+    
+    
+    
+
+    
+
+    
+    <meta name="twitter:card" content="summary">
+
+    
+    <meta name="twitter:title" content="Notebook on nbviewer">
+    
+
+    
+    <meta name="twitter:description" content="Check out this IPython notebook!">
+    
+
+    
+    <meta name="twitter:domain" content="nbviewer.ipython.org">
+    
+
+    <meta name="twitter:image:src" content="http://ipython.org/ipython-doc/dev/_images/ipynb_icon_128x128.png">
+    
+    
+    
+
+    <link href="http://nbviewer.ipython.org/ipython-static/style/ipython.min.css" rel="stylesheet">
+    <link href="http://nbviewer.ipython.org/static/css/pygments.css" rel="stylesheet">
+    <style type="text/css" media="screen and (min-width:980px)">
+   
+    body {
+        padding-top: 40px;
+    }
+
+    </style>
+    <style type="text/css">
+    .imgwrap {
+        text-align: center;
+    }
+
+    @media (max-width: 767px){
+
+        div.input, div.output_area {
+            -webkit-box-orient: vertical;
+            -moz-box-orient: vertical;
+            box-orient: vertical;
+        }
+
+        div.prompt {
+            text-align:left;
+        }
+
+    }
+
+    
+    </style>
+    
+    <script type="text/javascript" async="" src="./bat%20star%20blasts.ipynb_files/ga.js"></script><script src="./bat%20star%20blasts.ipynb_files/MathJax.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+    init_mathjax = function() {
+        if (window.MathJax) {
+            // MathJax loaded
+            MathJax.Hub.Config({
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                "HTML-CSS": {
+                    styles: {'.MathJax_Display': {"margin": 0}},
+                    linebreaks: { automatic: true }
+                }
+            });
+            MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+    
+  <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style></head>
+
+  <body data-spy="scroll" data-target=".subnav" data-offset="50"><div id="MathJax_Message" style="display: none;"></div>
+
+  <!-- These are loaded at the top of the body so they are available to notebook
+  cells when they are loaded below. -->
+  <script src="./bat%20star%20blasts.ipynb_files/jquery.min.js"></script>
+  <script src="./bat%20star%20blasts.ipynb_files/require.js"></script>
+  <script src="./bat%20star%20blasts.ipynb_files/moment.min.js"></script>
+
+  <!-- Navbar
+  ================================================== -->
+    <div id="menubar" class="navbar navbar-fixed-top hidden-print animated">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+
+                <li>
+        <a href="http://nbviewer.ipython.org/" title="nbviewer">
+            <strong>
+            <span>nbviewer</span>
+            </strong>
+        </a>
+    </li>
+                <li>
+        <a href="http://nbviewer.ipython.org/faq" title="FAQ">
+            
+            <span>FAQ</span>
+            
+        </a>
+    </li>
+
+              <li class="">
+                <a href="http://www.ipython.org/">IPython</a>
+              </li>
+            </ul>
+            <ul class="nav pull-right"> 
+              
+              
+      
+        <li>
+        <a href="https://github.com/rmauntz/EIMD_notebook/blob/master/bat%20star%20blasts.ipynb" title="Notebook Home">
+            <span class="fa fa-github fa-2x menu-icon"></span>
+            <span class="menu-text">Notebook Home</span>
+        </a>
+    </li>
+      
+        <li>
+        <a href="https://raw.githubusercontent.com/rmauntz/EIMD_notebook/master/bat%20star%20blasts.ipynb" title="Download Notebook" download="">
+            <span class="fa fa-download fa-2x menu-icon"></span>
+            <span class="menu-text">Download Notebook</span>
+        </a>
+    </li>
+    
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+     
+    
+<ul class="breadcrumb">
+    
+    <li><a href="http://nbviewer.ipython.org/github/rmauntz/EIMD_notebook/tree/master">EIMD_notebook</a> <span class="divider">/</span></li>
+    
+    <li><a href="http://nbviewer.ipython.org/github/rmauntz/EIMD_notebook/tree/master/bat%20star%20blasts.ipynb">bat star blasts.ipynb</a> <span class="divider">/</span></li>
+    
+</ul>
+
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[1]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">pwd</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">
+    Out[1]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>u'C:\\Users\\user\\Documents\\IPython_Notebooks'
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[2]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">!</span>head C:<span class="se">\U</span>sers<span class="se">\u</span>ser<span class="se">\D</span>ocuments<span class="se">\I</span>Python_Notebooks<span class="se">\P</span>m_genes.fasta
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&gt;PMI_010847-RA
+GCTAACATAGAGATCTTCCTGCCACGGATCGAGGCAGTGGTCCTGTTCGGTGAGCCGGTC
+AGGTGGGAGACCAATCTCCAGCTGATTTTGGACATGTTGATCACCAACGGTCAGCTAAAC
+CACACCCCTGACCACGTCCCGTACCCTAACATGCCGGTCCTTGGATGCAACGTGGATCTC
+ATGTGGATGTCCGAGGCTCATCTACCAAGGTTAGGACATGGCTCTTTCATGGTGTGCCTA
+GAATCACTTTACAAGAAAATCACAGGTCGGGATCTGCTGTACACCGTTCTGACGGGCAAA
+CCTAGTCAGATAACGTACCACTGTGCTGAGAATGTACTAAGCCAACAAGCGAGGGCCATG
+GGATGTCAGGGCCCACTCCGAACACTCTATGCCATTGGTGACAACCCGATGACCGACATC
+TACGGGGCCAATCTGTACAACCAGTACCTCACAGCGAAAGCTGCTAAAGGCCTACAGAAA
+CCAGGTAGCCGCCAGCCAGCGGCCATACGCCAGGGCGTGGTCATGTCCGATCCCCACGAC
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+                #Pm_genes.fasta is the patiria miniata (bat star) transcriptom available for download from http://www.spbase.org/SpBase/download/
+                
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[3]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">!</span>wc C:<span class="se">\U</span>sers<span class="se">\u</span>ser<span class="se">\D</span>ocuments<span class="se">\I</span>Python_Notebooks<span class="se">\P</span>m_genes.fasta
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  613310   613310 35186335 C:\Users\user\Documents\IPython_Notebooks\Pm_genes.fasta
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[4]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">!</span>fgrep -c <span class="s1">'PMI'</span> C:<span class="se">\U</span>sers<span class="se">\u</span>ser<span class="se">\D</span>ocuments<span class="se">\I</span>Python_Notebooks<span class="se">\P</span>m_genes.fasta
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>29805
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[5]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">!</span>C:<span class="se">\\</span>Users<span class="se">\\</span>user<span class="se">\\</span>Documents<span class="se">\\</span>IPython_Notebooks<span class="se">\b</span>last<span class="se">\b</span>in<span class="se">\b</span>lastn -h
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>USAGE
+  blastn [-h] [-help] [-import_search_strategy filename]
+    [-export_search_strategy filename] [-task task_name] [-db database_name]
+    [-dbsize num_letters] [-gilist filename] [-seqidlist filename]
+    [-negative_gilist filename] [-entrez_query entrez_query]
+    [-db_soft_mask filtering_algorithm] [-db_hard_mask filtering_algorithm]
+    [-subject subject_input_file] [-subject_loc range] [-query input_file]
+    [-out output_file] [-evalue evalue] [-word_size int_value]
+    [-gapopen open_penalty] [-gapextend extend_penalty]
+    [-perc_identity float_value] [-xdrop_ungap float_value]
+    [-xdrop_gap float_value] [-xdrop_gap_final float_value]
+    [-searchsp int_value] [-max_hsps int_value] [-sum_statistics]
+    [-penalty penalty] [-reward reward] [-no_greedy]
+    [-min_raw_gapped_score int_value] [-template_type type]
+    [-template_length int_value] [-dust DUST_options]
+    [-filtering_db filtering_database]
+    [-window_masker_taxid window_masker_taxid]
+    [-window_masker_db window_masker_db] [-soft_masking soft_masking]
+    [-ungapped] [-culling_limit int_value] [-best_hit_overhang float_value]
+    [-best_hit_score_edge float_value] [-window_size int_value]
+    [-off_diagonal_range int_value] [-use_index boolean] [-index_name string]
+    [-lcase_masking] [-query_loc range] [-strand strand] [-parse_deflines]
+    [-outfmt format] [-show_gis] [-num_descriptions int_value]
+    [-num_alignments int_value] [-html] [-max_target_seqs num_sequences]
+    [-num_threads int_value] [-remote] [-version]
+
+DESCRIPTION
+   Nucleotide-Nucleotide BLAST 2.2.29+
+
+Use '-help' to print detailed descriptions of command line arguments
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[6]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">!</span>blastn <span class="err">\</span>
+<span class="o">-</span><span class="n">query</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">user</span>\<span class="n">Documents</span>\<span class="n">IPython_Notebooks</span>\<span class="n">Pm_genes</span><span class="o">.</span><span class="n">fasta</span> \
+<span class="o">-</span><span class="n">db</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">user</span>\<span class="n">Documents</span>\<span class="n">IPython_Notebooks</span>\<span class="n">blast</span>\<span class="nb">bin</span>\<span class="n">databases</span>\<span class="n">Phel_transcriptome_clc</span> \
+<span class="o">-</span><span class="n">out</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">user</span>\<span class="n">Documents</span>\<span class="n">IPython_Notebooks</span>\<span class="n">Output</span>\<span class="n">batstar_hel_ntblast2</span> \
+<span class="o">-</span><span class="n">evalue</span> <span class="mf">1E-05</span> \
+<span class="o">-</span><span class="n">max_target_seqs</span> <span class="mi">5</span> \
+<span class="o">-</span><span class="n">outfmt</span> <span class="mi">6</span> \
+<span class="o">-</span><span class="n">num_threads</span> <span class="mi">4</span> \
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[7]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">!</span>wc C:<span class="se">\U</span>sers<span class="se">\u</span>ser<span class="se">\D</span>ocuments<span class="se">\I</span>Python_Notebooks<span class="se">\O</span>utput<span class="se">\b</span>atstar_hel_ntblast2
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>  3460  41520 279940 C:\Users\user\Documents\IPython_Notebooks\Output\batstar_hel_ntblast2
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[8]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">!</span>head C:<span class="se">\U</span>sers<span class="se">\u</span>ser<span class="se">\D</span>ocuments<span class="se">\I</span>Python_Notebooks<span class="se">\O</span>utput<span class="se">\b</span>atstar_hel_ntblast
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>PMI_005730-RA	Phel_clc_contig_14067	77.94	408	86	4	52	457	2552	2147	4e-066	  252
+PMI_028366-RA	Phel_clc_contig_1561	77.05	183	40	2	2038	2219	3895	4076	3e-021	  104
+PMI_018581-RA	Phel_clc_contig_7180	78.08	689	135	13	748	1425	946	263	5e-117	  422
+PMI_016388-RA	Phel_clc_contig_9391	73.66	391	97	6	22	409	1305	918	1e-034	  147
+PMI_016388-RA	Phel_clc_contig_17473	80.32	188	30	7	163	347	35	218	3e-031	  135
+PMI_016388-RA	Phel_clc_contig_9910	73.53	374	89	10	52	420	1974	1606	1e-030	  134
+PMI_016388-RA	Phel_clc_contig_14428	79.56	181	33	4	34	212	1855	2033	2e-028	  126
+PMI_007351-RA	Phel_clc_contig_29013	84.98	233	35	0	319	551	202	434	2e-061	  237
+PMI_007347-RA	Phel_clc_contig_5857	82.88	917	157	0	181	1097	1123	207	0.0	  824
+PMI_012824-RA	Phel_clc_contig_13029	84.10	283	44	1	1	282	61	343	2e-072	  272
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[9]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="o">!</span>fgrep -c <span class="s1">'PMI'</span> C:<span class="se">\U</span>sers<span class="se">\u</span>ser<span class="se">\D</span>ocuments<span class="se">\I</span>Python_Notebooks<span class="se">\O</span>utput<span class="se">\b</span>atstar_hel_ntblast
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>3407
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">
+In&nbsp;[]:
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre> 
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+     <!-- <hr/> -->
+     <div class="row hidden-print">
+      <div class="span12 text-center">
+        <a href="http://nbviewer.ipython.org/github/rmauntz/EIMD_notebook/blob/master/bat%20star%20blasts.ipynb#">Back to top</a>
+      </div>
+    </div>
+
+     <!-- Footer
+     ================================================== -->
+      
+      <footer class="footer hidden-print">
+      <div class="span12 row-fluid footer-row">
+          <div class="span4">
+            <p>This web site does not host notebooks, it only renders notebooks available on other websites.</p>
+          </div>
+
+          <div class="span4">
+            <p>Thanks to <a href="http://www.rackspace.com/">Rackspace</a> for hosting.</p>
+            <p>nbviewer GitHub <a href="https://github.com/ipython/nbviewer">repository</a>.</p>
+            <p>nbviewer <a href="https://github.com/ipython/nbviewer/blob/master/LICENSE.txt" target="_blank">license</a>.</p>
+          </div>
+
+          <div class="span4">
+            
+
+              
+                <p>
+                    nbviewer version:
+                    <a href="https://github.com/ipython/nbviewer/commit/25126b2b232c4ddeab792b96f646762301258b6d">25126b2</a>
+                </p>
+              
+            
+
+<p class="text-muted">
+    IPython version: 2.2.0
+    
+</p>
+
+
+            
+
+            
+
+<p class="text-muted">
+Rendered <span class="date" data-date="Mon, 15 Sep 2014 16:01:00 UTC" title="Mon, 15 Sep 2014 16:01:00 UTC">a few seconds ago</span>
+</p>
+
+
+          </div>
+      </div>
+      </footer>
+      
+
+    </div><!-- /container -->
+
+    <script src="./bat%20star%20blasts.ipynb_files/bootstrap-collapse.js"></script>
+    <script src="./bat%20star%20blasts.ipynb_files/headroom.min.js"></script>
+    <script src="./bat%20star%20blasts.ipynb_files/jQuery.headroom.min.js"></script>
+
+
+    
+    
+    
+    <script>
+    $(document).ready(
+                function(){
+                    $("#menubar").headroom({
+                        "tolerance": 5,
+                        "offset": 205,
+                        "classes": {
+                            "initial": "animated",
+                            "pinned": "slideInDown",
+                            "unpinned": "slideOutUp"
+                        }
+                    })
+                }
+            );
+    </script>
+
+
+    <!-- Analytics
+    ================================================== -->
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38683231-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>
+    <script>
+        var update_date  = function(){
+            var str = window.moment($('.date').data('date')).fromNow();
+            $('.date').text(str);
+        }
+        setInterval(update_date , 61*1000);
+        $(update_date);
+    </script>
+    <!--NEW RELIC Stop Perf Measurement-->
+    
+    <!--NEW RELIC End-->
+  
+</body></html>
